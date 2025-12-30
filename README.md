@@ -1,5 +1,8 @@
 # Claude Dashboard
 
+[![Tests](https://github.com/Danielratmiroff/claude-dashboard/actions/workflows/tests.yml/badge.svg)](https://github.com/Danielratmiroff/claude-dashboard/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/Danielratmiroff/claude-dashboard/graph/badge.svg)](https://codecov.io/gh/Danielratmiroff/claude-dashboard)
+
 Real-time CLI dashboard for Claude Code tool events with an integrated logging library for plugin developers.
 
 ## Features
