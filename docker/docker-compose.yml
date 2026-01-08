@@ -34,6 +34,7 @@ services:
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
       - GF_AUTH_DISABLE_LOGIN_FORM=true
       - GF_SECURITY_ALLOW_EMBEDDING=true
+      - GF_INSTALL_PLUGINS=marcusolsson-hourly-heatmap-panel
     volumes:
       - grafana-data:/var/lib/grafana
       - ./grafana/provisioning:/etc/grafana/provisioning:ro
@@ -61,14 +62,12 @@ services:
         echo "Waiting for Grafana..."
         until curl -sf http://grafana:3000/api/health > /dev/null 2>&1; do sleep 2; done
         echo "Grafana is ready!"
-        if curl -sf http://grafana:3000/api/dashboards/uid/claude-code-metrics > /dev/null 2>&1; then
-          echo "Dashboard already exists"
-          exit 0
-        fi
-        echo "Importing dashboard..."
-        curl -sf -X POST -H "Content-Type: application/json" \
-          -d "{\"dashboard\": $$(cat /dashboards/claude-code.json), \"overwrite\": false}" \
-          http://grafana:3000/api/dashboards/db
+        for f in /dashboards/*.json; do
+          echo "Importing $$f..."
+          curl -sf -X POST -H "Content-Type: application/json" \
+            -d "{\"dashboard\": $$(cat $$f), \"overwrite\": false}" \
+            http://grafana:3000/api/dashboards/db
+        done
         echo "Done!"
     depends_on:
       - grafana
