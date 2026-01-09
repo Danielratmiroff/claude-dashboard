@@ -39,4 +39,4 @@ docker compose down -v    # Reset (removes data)
 | Grafana | 3000 | Dashboard UI |
 | Prometheus | 9090 | Metrics storage |
 | OTel Collector | 4317 | Receives metrics |
-| Pushgateway | 9091 | Hook metrics | (WIP)
+| Pushgateway | 9091 | Hook metrics (WIP) | 
