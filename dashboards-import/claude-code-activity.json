@@ -88,7 +88,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "count(count by (session_id)(last_over_time(claude_code_token_usage_tokens_total[$__range])))",
+          "expr": "count(last_over_time(claude_code_session_count_total{job=\"otel-collector\"}[$__range]))",
           "range": true,
           "refId": "A"
         }
