@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 3,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -217,6 +217,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "expr": "bottomk(1, sum by (language) (claude_code_code_edit_tool_decision_total{decision=\"accept\"}) / sum by (language) (claude_code_code_edit_tool_decision_total) * 100)",
+          "legendFormat": "{{language}}",
           "refId": "A"
         }
       ],
