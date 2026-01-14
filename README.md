@@ -2,7 +2,7 @@
 
 Grafana dashboard for visualizing Claude Code usage metrics.
 
-<img width="1446" height="1240" alt="Pasted image 20260109100843" src="https://github.com/user-attachments/assets/93825254-8b60-4d0e-af89-fb568e0d9d04" />
+<img width="1391" height="1114" alt="image" src="https://github.com/user-attachments/assets/55e1e931-7007-4764-a08f-53829d595bd7" />
 
 ## Quick Start
 
